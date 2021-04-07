@@ -1,10 +1,29 @@
-# Coopedin-Frontend
-Separate Frontend Repository for Coopedin Team
+all based on Ubuntu 20.04
 
-Wireframe design (in progress):
+## installation
+```bash
+# install npm
+$ sudo apt install -y npm
+```
 
-User/Company Page:
-https://lucid.app/lucidchart/f061420c-b801-4ffa-a6ec-2582c1342f06/edit?beaconFlowId=11B7BCE6652CC96E&page=uP1BopAARZY8#
+## starting new project (not needed)
+```bash
+$ npm init react-app client
+```
 
-Overall Job Board:
-https://lucid.app/lucidchart/9ccb9ec4-0736-444b-8d29-3b7945d46015/edit?beaconFlowId=FE75C4BD12F1E61D&page=0_0#
+
+## npm commands
+```bash
+$ npm start
+#    Starts the development server.
+
+$ npm run build
+#    Bundles the app into static files for production.
+
+$ npm test
+#    Starts the test runner.
+
+$ npm run eject
+#    Removes this tool and copies build dependencies, configuration files
+#    and scripts into the app directory. If you do this, you can’t go back!
+```
