@@ -1,0 +1,9 @@
+div1 {
+    margin-left: 20px;
+    color: black;
+    padding: 10px;
+    border:1px solid red;
+    border-radius: 10px;
+    background: red;
+    box-shadow: 0 1px 3px black;
+}

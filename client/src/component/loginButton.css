@@ -1,0 +1,12 @@
+button {
+    margin-right: 20px;
+    padding: 10px;
+    border:1px solid red;
+    border-radius: 10px;
+    background: red;
+    box-shadow: 0 1px 3px black;
+}
+button:hover{
+    background-color: #eef;
+    border: 1px solid #aaf;
+}

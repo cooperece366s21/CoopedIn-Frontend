@@ -1,32 +1,35 @@
 import React, {Component} from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
+import HomePage from "./component/home";
+import LoginPage from "./component/loginPage";
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import Timer from "./component/Timer";
+import connect from "react-redux/lib/connect/connect";
+import {push} from "connected-react-router";
+import { BrowserRouter as Router, BrowserRouter, Switch, Route, Link } from 'react-router-dom';
+import loginButton from "./component/loginButton"
+import {changeLogin, changePage, changeUsername} from "./redux/actions";
 
+//import LoginPage from "./loginPage";
 ReactDOM.render(
   <React.StrictMode>
+      <BrowserRouter>
+          <Route path="/" component = {App}>
+              <Route path ="app/homepage" component ={HomePage} />
+                <Route path= "/loginPage" component ={LoginPage} />
+          </Route>
+      </BrowserRouter>
     <App />
   </React.StrictMode>,
   document.getElementById('root')
 );
 
-class IndexPage extends Component {
-    render() {
-        return (
-            <div>
-                <h1><login-button>Login Redirect</login-button>Index Page (This should be used for Job Board)<Timer></Timer></h1>
-            </div>
-        );
-    }
-}
+
 
 // export default Test
 // <Link to="/signup" className="btn btn-primary">Sign up</Link>
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
 // or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-    reportWebVitals();
-ReactDOM.render(<IndexPage />, document.getElementById('root'));
-
+reportWebVitals();

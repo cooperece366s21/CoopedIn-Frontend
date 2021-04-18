@@ -1,0 +1,50 @@
+body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+
+}
+section#IndexPage {
+    background: linear-gradient(-45deg, #EE7752, #E73C7E, #23A6D5, #23D5AB);
+    background-size: 100% 100%;
+    animation: Gradient 2s ease infinite;
+}
+code {
+    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+header{
+    background-color:blue;
+    padding:20px;
+    text-align:center;
+    font-family: 'Droid Sans';
+    font-weight: bold;
+    font-size: 20px;
+}
+h1 {
+
+}
+.my-button {
+    display: flex;
+    align-items: center;
+}
+
+.right {
+    order: 1;
+}
+.Router {
+    text-align: right;
+    margin-right: 20px;
+    padding: 10px;
+    border:1px solid red;
+    border-radius: 10px;
+    background: red;
+    box-shadow: 0 1px 3px black;
+}
+.Router:hover{
+    background-color: #eef;
+    border: 1px solid #aaf;
+}

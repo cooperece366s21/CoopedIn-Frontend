@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react';
-import ReactDOM from 'react-dom';
+import './Timer.css';
 
 export const Timer = () => {
     var [date, setDate] = useState(new Date());
@@ -11,9 +11,9 @@ export const Timer = () => {
         }
     });
     return(
-        <div>
-            <p>Time: {date.toLocaleTimeString()}</p>
-        </div>
+        <div1>
+            Time: {date.toLocaleTimeString()}
+        </div1>
     )
 }
 // cleanup used to reset process, avoid leak
