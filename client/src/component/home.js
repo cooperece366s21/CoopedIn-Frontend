@@ -4,29 +4,34 @@ import ReactDOM from "react-dom";
 import './home.css';
 import LoginButtonThing from "./loginButton";
 import {BrowserRouter, Link} from "react-router-dom";
-class HomePage extends Component {
-    constructor(props) {
-        super(props);
-    }
-        //    this.state = {
-        //        activePage:"Index"
-        //    };
+import BasicTable from "./table";
 
-        //this.state = {activePage = index.js}
+class HomePage extends Component {
+    constructor(props){
+        super(props);
+        this.state = {
+            activePage:"HomePage",
+        };
+    }
+
+
+
+    //this.state = {activePage = index.js}
         //    this.handleClick = this.handleClick.bind(this)
         //}
         //handleClick(activePage) {
         //    this.props.changePage(activePage);
 
-
     render() {
         return (
             <BrowserRouter>
             <header>
-                <LoginButtonThing />Home Page<Timer></Timer>
+                <LoginButtonThing />Job Board<Timer></Timer>
             </header>
                 <body>
-
+                    <div>
+                        <BasicTable />
+                    </div>
                 </body>
             </BrowserRouter>
 

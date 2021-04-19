@@ -5,7 +5,12 @@ import {
     CHANGE_USERNAME,
     LOGOUT,
 } from "../constants/action-types";
-
+export const changePage = (activePage) => ({
+    type: CHANGE_PAGE,
+    payload: {
+        activePage,
+    },
+});
 export const addDomainName = (domainName) => ({
     type: ADD_DOMAIN_NAME, 
     payload: {
@@ -13,12 +18,7 @@ export const addDomainName = (domainName) => ({
     },
 });
 
-export const changePage = (activePage) => ({
-    type: CHANGE_PAGE,
-    payload: {
-        activePage,
-    },
-});
+
 
 export const changeLogin = (loggedIn) => ({
     type: CHANGE_LOGIN,

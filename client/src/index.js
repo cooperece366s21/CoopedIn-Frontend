@@ -15,15 +15,8 @@ import allReducers from "./redux/reducer"
 //import LoginPage from "./loginPage";
 import {Provider} from "react-redux";
 
-
-//STORE
-//const defaultInitialState = {
- //   activePage: HomePage,
-//};
-
 const store = createStore(
     allReducers,
-    //defaultInitialState,
     window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
 );
 

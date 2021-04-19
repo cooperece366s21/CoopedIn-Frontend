@@ -12,6 +12,8 @@ function allReducers(state = initState, action){
                 ...state,
                 activePage :action.payload.activePage,
             };
+        default:
+            return state;
     }
 }
 

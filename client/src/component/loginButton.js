@@ -4,24 +4,23 @@ import ReactDOM from "react-dom";
 import LoginPage from "./loginPage";
 import mapStateToProps from "react-redux/lib/connect/mapStateToProps";
 import {connect} from "react-redux";
-import {useDispatch} from "react-redux";
-import changePage from "../redux/reducer/index";
-const mapDispatchToProps = (state) => {
+import { useDispatch } from "react-redux";
+import { changePage } from "../redux/actions/actions";
+//import changePage from "../redux/reducer/index";
+export default function LoginButtonThing(){
+    const dispatch = useDispatch();
+    return (
+            <button onClick={() => dispatch(changePage("loginPage"))}>Login Page</button>
+    )
+}
+const mapDispatchToProps = (dispatch) => {
     return {
-        changePage : state.activePage
+        changePage : dispatch.activePage
     }
 };
-function LoginButtonThing (){
 
-        return(
-            <div>
-                <button onClick={() =>(changePage('loginPage'))}>Login Page</button>
-            </div>
-        )
-
-}
 //export default LoginButtonThing;
-export default connect(null,mapDispatchToProps)(LoginButtonThing);
+//export default connect(null,mapDispatchToProps)(LoginButtonThing);
 
 //export default connect(mapStateToProps, {changePage})(LoginButtonThing);
 //const dispatch = useDispatch();

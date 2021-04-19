@@ -2,18 +2,18 @@ import React from "react";
 //import logo from './logo.svg';
 import LoginPage from "./component/loginPage";
 import HomePage from "./component/home";
-import {connect} from "react-redux";
-//import activePage from redux
+//import {connect} from "react-redux";
+//import activePage from "store";
 import {BrowserRouter as Router, Switch, Route, BrowserRouter} from "react-router-dom";
-import changePage from "./redux/actions/actions";
-import {useDispatch} from "react-redux";
+//import changePage from "./redux/actions/actions";
+import {connect, useDispatch} from "react-redux";
 
 class App extends React.Component {
   render() {
     //this.props.activePage = 'HomePage';
     let renderedPage;
-    if (this.props.changePage === "LoginPage") renderedPage = <LoginPage/>;
-    else if (this.props.changePage === "HomePage") renderedPage = <HomePage/>;
+    if (this.activePage === "loginPage")  renderedPage = <LoginPage/>;
+    else if (this.activePage === "HomePage") renderedPage = <HomePage/>;
     else renderedPage = <HomePage/>;
     //defaultStatus:activePage = "HomePage";
     return (
@@ -23,13 +23,19 @@ class App extends React.Component {
     );
   }
 }
+function mapStateToProps(state){
+  return{
+    activePage: state.activePage
+  };
+}
+export default connect (mapStateToProps)(App);
+
 //function mapStateToProps(state) {
 //  return {
 //    activePage: state.activePage,
 
 //  };
 //}
-export default App;
 //export default connect(mapStateToProps,(App));
 //export default function App(){
 //  return(
