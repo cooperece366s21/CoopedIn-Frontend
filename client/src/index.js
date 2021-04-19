@@ -9,19 +9,36 @@ import connect from "react-redux/lib/connect/connect";
 import {push} from "connected-react-router";
 import { BrowserRouter as Router, BrowserRouter, Switch, Route, Link } from 'react-router-dom';
 import loginButton from "./component/loginButton"
-import {changeLogin, changePage, changeUsername} from "./redux/actions";
-
+import {changeLogin, changePage, changeUsername} from "./redux/actions/actions";
+import {createStore, combineReducers} from 'redux';
+import allReducers from "./redux/reducer"
 //import LoginPage from "./loginPage";
+import {Provider} from "react-redux";
+
+
+//STORE
+//const defaultInitialState = {
+ //   activePage: HomePage,
+//};
+
+const store = createStore(
+    allReducers,
+    //defaultInitialState,
+    window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+);
+
 ReactDOM.render(
-  <React.StrictMode>
-      <BrowserRouter>
-          <Route path="/" component = {App}>
-              <Route path ="app/homepage" component ={HomePage} />
-                <Route path= "/loginPage" component ={LoginPage} />
-          </Route>
-      </BrowserRouter>
-    <App />
-  </React.StrictMode>,
+    <Provider store = {store}>
+        <React.StrictMode>
+            <BrowserRouter>
+                 <Route exact path="/" component = {HomePage}>
+                    <Route path= "/loginPage" component ={LoginPage} />
+                </Route>
+             </BrowserRouter>
+         <App />
+
+  </React.StrictMode>
+    </Provider>,
   document.getElementById('root')
 );
 
@@ -33,3 +50,5 @@ ReactDOM.render(
 // to log results (for example: reportWebVitals(console.log))
 // or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
 reportWebVitals();
+//// <Route path ="app/homepage" component ={HomePage} />
+//

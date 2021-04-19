@@ -23,9 +23,13 @@ class HomePage extends Component {
         return (
             <BrowserRouter>
             <header>
-                <LoginButtonThing />Home Page <Timer></Timer>
+                <LoginButtonThing />Home Page<Timer></Timer>
             </header>
-                </BrowserRouter>
+                <body>
+
+                </body>
+            </BrowserRouter>
+
         );
     }
 }

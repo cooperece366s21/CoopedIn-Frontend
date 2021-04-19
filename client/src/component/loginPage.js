@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import {changePage} from "../redux/actions";
+import {changePage} from "../redux/actions/actions";
 import './loginPage.css';
 
 

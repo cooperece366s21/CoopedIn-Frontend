@@ -1,25 +1,20 @@
-import {changePage} from "../actions";
-const {createStore} = Redux;
-
-
-const initialState = {
-    activePage: "index",
-    domainName: "http://localhost:8080", 
-    loggedIn: "false", 
-    username: ""
-};
-
-function rootReducer(state = initialState, action) {
-     switch(action.type) {
-         if(action.type ==='CHANGE_PAGE')
-             return{
-             ...state,
-                 activePage: [...state.activePage, action.todo]
-             }
-         if(action.type==='CHANGE_LOGIN')
-
-     }
+import {combineReducers} from "redux";
+import loggedReducer from "./isLogged";
+import {CHANGE_PAGE} from "../constants/action-types";
+import {changePage} from "../actions/actions"
+const initState = {
+    activePage: 'HomePage',
 }
-const store = createStore(rootReducer);
+function allReducers(state = initState, action){
+    switch(action.type){
+        case CHANGE_PAGE:
+            return{
+                ...state,
+                activePage :action.payload.activePage,
+            };
+    }
+}
 
-store.dispatch(changePage)
+//const store = createStore(rootReducer);
+
+export default allReducers;
