@@ -1,0 +1,14 @@
+body {
+    background: linear-gradient(to bottom right, red, yellow, green, blue, purple) no-repeat;
+    background-size: cover;
+
+}
+header{
+    text-align:center;
+    padding:10px;
+}
+
+RegisterButtonThing{
+    text-align: center;
+    padding: 20px;
+}

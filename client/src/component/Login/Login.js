@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /**
  * todo: create separate directory to make a POST request to server
  * currently directly part of the component
@@ -57,3 +58,38 @@ export default function Login({ setToken }) {
 Login.propTypes = {
     setToken: PropTypes.func.isRequired
 }
+=======
+import React from "react";
+import "./Login.scss";
+export class Login extends React.Component{
+    constructor(props) {
+        super(props);
+    }
+    render() {
+        return(
+            <div className="base-container">
+                <div className = "header">Login</div>
+                <div className = "content">
+                    <div className = "form">
+                        <div className ="form-group">
+                            <label htmlFor="username">Username</label>
+                            <input type="text" name = "username" placeholder = "Username"/>
+                        </div>
+                        <div className ="form-group">
+                            <label htmlFor="password">Password</label>
+                            <input type="password" name = "password" placeholder = "Password"/>
+                        </div>
+                    </div>
+                </div>
+                <div className = "footer">
+                    <button type ="button" className ="btn">
+                        Login
+                    </button>
+                </div>
+            </div>
+        )
+    }
+};
+
+export default Login;
+>>>>>>> bbea7cda55e59d6a30728ff186d1ff493558ded5

@@ -1,6 +1,7 @@
 import React from "react";
 //import logo from './logo.svg';
-import LoginPage from "./component/loginPage";
+import LoginPage from "./component/Login/loginPage";
+import RegisterPage from "./component/Login/registerPage"
 import HomePage from "./component/home";
 //import {connect} from "react-redux";
 //import activePage from "store";
@@ -24,6 +25,7 @@ class App extends React.Component {
               <HomePage />
             </Route>
             <Route path= "/loginPage" component = {LoginPage}/>
+              <Route path ="/registerPage" component = {RegisterPage}/>
           </Switch>
         </Router>
         //</div>

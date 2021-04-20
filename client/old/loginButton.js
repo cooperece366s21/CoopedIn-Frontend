@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import './loginButton.css';
 import ReactDOM from "react-dom";
-import LoginPage from "./loginPage";
+import LoginPage from "./Login/loginPage";
 import mapStateToProps from "react-redux/lib/connect/mapStateToProps";
 import {connect} from "react-redux";
 import { useDispatch } from "react-redux";
