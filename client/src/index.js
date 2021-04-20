@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import ReactDOM from 'react-dom';
 import HomePage from "./component/home";
-import LoginPage from "./component/loginPage";
+import LoginPage from "./component/Login/loginPage";
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import Timer from "./component/Timer";
