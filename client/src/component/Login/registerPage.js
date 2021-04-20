@@ -29,7 +29,7 @@ class RegisterPage extends React.Component {
         return (
             <div>
                 <header>
-                    <h1>Register Page</h1>
+                    <h1>Account Registration Page</h1>
                 </header>
                 <body>
                 <Register/>

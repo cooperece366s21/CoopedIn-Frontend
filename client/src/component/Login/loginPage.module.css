@@ -5,20 +5,10 @@ body {
 }
 header{
     text-align:center;
-    padding:100px;
-}
-companylogin{
-    background-color:green;
-    padding:30px;
-    margin-left: 10%;
-    text-align:center;
+    padding:10px;
 }
 
-userlogin{
-    background-color:red;
-    text-align:center;
-    padding:30px;
-    margin-left: 30%;
-    margin-right:10%;
-    text-align:center;
+RegisterButtonThing{
+    text-align: center;
+    padding: 20px;
 }
