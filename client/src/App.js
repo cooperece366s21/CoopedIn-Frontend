@@ -11,15 +11,22 @@ import {connect, useDispatch} from "react-redux";
 class App extends React.Component {
   render() {
     //this.props.activePage = 'HomePage';
-    let renderedPage;
-    if (this.activePage === "loginPage")  renderedPage = <LoginPage/>;
-    else if (this.activePage === "HomePage") renderedPage = <HomePage/>;
-    else renderedPage = <HomePage/>;
+    //let renderedPage;
+    //if (this.props.changePage === "loginPage")  renderedPage = <LoginPage/>;
+    //else if (this.props.changePage === "homePage") renderedPage = <HomePage/>;
+    //else renderedPage = <HomePage/>;
     //defaultStatus:activePage = "HomePage";
     return (
-        <div id="App">
-          {renderedPage}
-        </div>
+       // <div id="App">
+        <Router>
+          <Switch>
+            <Route exact path="/" >
+              <HomePage />
+            </Route>
+            <Route path= "/loginPage" component = {LoginPage}/>
+          </Switch>
+        </Router>
+        //</div>
     );
   }
 }
@@ -28,8 +35,8 @@ function mapStateToProps(state){
     activePage: state.activePage
   };
 }
-export default connect (mapStateToProps)(App);
-
+//export default connect (mapStateToProps)(App);
+export default App;
 //function mapStateToProps(state) {
 //  return {
 //    activePage: state.activePage,
@@ -40,14 +47,7 @@ export default connect (mapStateToProps)(App);
 //export default function App(){
 //  return(
 //      <Provider store={store}>
-//       <Router>
-//          <Switch>
-//            <Route path="/">
-//              <HomePage />
-//            </Route>
-//              <Route path= "/loginPage" component ={LoginPage} />
-//          </Switch>
-//          </Router>
+//
 //      </Provider>
 //  )
 //}

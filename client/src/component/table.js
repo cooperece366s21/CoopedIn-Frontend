@@ -13,8 +13,8 @@ const useStyles = makeStyles({
         minWidth: 650,
     },
 });
-function createData(name, calories, fat, carbs, protein) {
-    return { name, calories, fat, carbs, protein };
+function createData(name, company, location, id, job_title) {
+    return { name, company, location, id, job_title };
 }
 
 const rows = [
@@ -46,10 +46,10 @@ export default function BasicTable() {
                             <TableCell component="th" scope="row">
                                 {row.name}
                             </TableCell>
-                            <TableCell align="right">{row.calories}</TableCell>
-                            <TableCell align="right">{row.fat}</TableCell>
-                            <TableCell align="right">{row.carbs}</TableCell>
-                            <TableCell align="right">{row.protein}</TableCell>
+                            <TableCell align="right">{row.company}</TableCell>
+                            <TableCell align="right">{row.location}</TableCell>
+                            <TableCell align="right">{row.id}</TableCell>
+                            <TableCell align="right">{row.job_title}</TableCell>
                         </TableRow>
                     ))}
                 </TableBody>
