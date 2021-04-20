@@ -1,13 +1,13 @@
 import React from "react";
 import "./Login.scss";
-export class Login extends React.Component{
+export class Register extends React.Component{
     constructor(props) {
         super(props);
     }
     render() {
         return(
             <div className="base-container">
-                <div className = "header">Login</div>
+                <div className = "header">Register</div>
                 <div className = "content">
                     <div className = "form">
                         <div className ="form-group">
@@ -30,4 +30,4 @@ export class Login extends React.Component{
     }
 };
 
-export default Login;
+export default Register;

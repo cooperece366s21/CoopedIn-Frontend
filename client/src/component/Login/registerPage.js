@@ -4,9 +4,9 @@ import {changePage} from "../../redux/actions/actions";
 import './loginPage.module.css';
 import styles from "./loginPage.module.css";
 import { isEmpty } from "lodash";
-import Login from "./Login"
-import RegisterButtonThing from "./registerButton";
-class LoginPage extends React.Component {
+import Register from "./Register"
+
+class RegisterPage extends React.Component {
     constructor(props){
         super(props);
         this.state = {
@@ -28,18 +28,15 @@ class LoginPage extends React.Component {
         const {username, password, isLoading, error, success} = this.state;
         return (
             <div>
-            <header>
-                <h1>Login Page</h1>
-            </header>
-            <body>
-                <Login/>
+                <header>
+                    <h1>Register Page</h1>
+                </header>
+                <body>
+                <Register/>
 
-            </body>
-                <RegisterButtonThing />
-                </div>
+                </body>
+            </div>
         );
     }
 }
-//ReactDOM.render(<LoginPage />, document.getElementById('root'));
-
-export default LoginPage;
+export default RegisterPage;
