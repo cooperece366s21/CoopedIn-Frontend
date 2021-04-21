@@ -1,9 +1,16 @@
 import React from "react";
 import "./Login.scss";
+import {withRouter} from "react-router-dom";
 export class Login extends React.Component{
     constructor(props) {
         super(props);
+        this.handleClick = this.handleClick.bind(this);
+
     }
+    handleClick = () => {
+        this.props.history.push("/userPage");
+        window.location.reload()
+    };
     render() {
         return(
             <div className="base-container">
@@ -21,7 +28,7 @@ export class Login extends React.Component{
                     </div>
                 </div>
                 <div className = "footer">
-                    <button type ="button" className ="btn">
+                    <button type ="button" onClick={this.handleClick} className ="btn">
                         Login
                     </button>
                 </div>
@@ -30,4 +37,4 @@ export class Login extends React.Component{
     }
 };
 
-export default Login;
+export default withRouter(Login);

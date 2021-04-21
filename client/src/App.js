@@ -3,73 +3,40 @@ import React from "react";
 import LoginPage from "./component/Login/loginPage";
 import RegisterPage from "./component/Login/registerPage"
 import HomePage from "./component/home";
+import UserPage from "./component/userPage"
 //import {connect} from "react-redux";
 //import activePage from "store";
 import {BrowserRouter as Router, Switch, Route, BrowserRouter} from "react-router-dom";
 //import changePage from "./redux/actions/actions";
 import {connect, useDispatch} from "react-redux";
+import useToken from './component/useToken'
+import Login from "./component/Login/Login";
 
-class App extends React.Component {
-  render() {
-    //this.props.activePage = 'HomePage';
-    //let renderedPage;
-    //if (this.props.changePage === "loginPage")  renderedPage = <LoginPage/>;
-    //else if (this.props.changePage === "homePage") renderedPage = <HomePage/>;
-    //else renderedPage = <HomePage/>;
-    //defaultStatus:activePage = "HomePage";
+function App(){
+
+
     return (
-       // <div id="App">
-        <Router>
-          <Switch>
-            <Route exact path="/" >
-              <HomePage />
-            </Route>
-            <Route path= "/loginPage" component = {LoginPage}/>
-              <Route path ="/registerPage" component = {RegisterPage}/>
-          </Switch>
-        </Router>
-        //</div>
-    );
-  }
-}
-function mapStateToProps(state){
-  return{
-    activePage: state.activePage
-  };
-}
-//export default connect (mapStateToProps)(App);
-export default App;
-//function mapStateToProps(state) {
-//  return {
-//    activePage: state.activePage,
+        <div className="wrapper">
 
-//  };
-//}
-//export default connect(mapStateToProps,(App));
-//export default function App(){
-//  return(
-//      <Provider store={store}>
-//
-//      </Provider>
-//  )
-//}
-//function App() {
-//  return (
-//    <div className="App">
-//      <header className="App-header">
-//        <img src={logo} className="App-logo" alt="logo" />
-//        <p>
-//          Edit <code>src/App.js</code> and save to reload.
-//        </p>
-//        <a
-//          className="App-link"
-//          href="https://reactjs.org"
-//         target="_blank"
-//          rel="noopener noreferrer"
-//        >
-//          Learn React
-//        </a>
-//      </header>
-//    </div>
-// );
-//}
+            <BrowserRouter>
+                <Switch>
+                    <Route exact path="/" component= { HomePage } />
+
+                    <Route path="/loginPage">
+                        <LoginPage />
+                    </Route>
+                    <Route path="/userPage">
+                        <UserPage />
+                    </Route>
+                    <Route path="/registerPage">
+                        <RegisterPage />
+                    </Route>
+
+                </Switch>
+            </BrowserRouter>
+        </div>
+    );
+}
+
+export default App;
+
