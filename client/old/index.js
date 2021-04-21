@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import HomePage from "./component/home";
 import LoginPage from "./component/loginPage";
 import App from './component/App/App';
-import reportWebVitals from './reportWebVitals';
+import reportWebVitals from '../src/reportWebVitals';
 import Timer from "./component/Timer";
 import connect from "react-redux/lib/connect/connect";
 import {push} from "connected-react-router";

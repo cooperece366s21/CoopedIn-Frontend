@@ -1,10 +1,10 @@
 import React, {Component} from "react";
-import Timer from "./Timer";
-import ReactDOM from "react-dom";
+import Timer from "../Timer/Timer";
+// import ReactDOM from "react-dom";
 import './home.css';
-import LoginButtonThing from "./loginButton";
+import LoginButtonThing from "../Login/loginButton";
 import {BrowserRouter, Link} from "react-router-dom";
-import BasicTable from "./table";
+import BasicTable from "../Table/table";
 
 class HomePage extends Component {
     constructor(props){
@@ -13,8 +13,6 @@ class HomePage extends Component {
             activePage:"HomePage",
         };
     }
-
-
 
     //this.state = {activePage = index.js}
         //    this.handleClick = this.handleClick.bind(this)

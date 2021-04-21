@@ -1,11 +1,12 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-import {changePage} from "../../redux/actions/actions";
+// import ReactDOM from 'react-dom';
+// import {changePage} from "../../redux/actions/actions";
 import './loginPage.module.css';
-import styles from "./loginPage.module.css";
-import { isEmpty } from "lodash";
+// import styles from "./loginPage.module.css";
+// import { isEmpty } from "lodash";
 import Login from "./Login"
 import RegisterButtonThing from "./registerButton";
+
 class LoginPage extends React.Component {
     constructor(props){
         super(props);
@@ -20,8 +21,6 @@ class LoginPage extends React.Component {
             },
             success: false
         };
-
-
     }
 
     render() {
