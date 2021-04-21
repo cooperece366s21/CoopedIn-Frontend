@@ -3,7 +3,7 @@ import Timer from "../Timer/Timer";
 // import ReactDOM from "react-dom";
 import './home.css';
 import LoginButtonThing from "../Login/loginButton";
-import {BrowserRouter, Link} from "react-router-dom";
+import { BrowserRouter, Link } from "react-router-dom";
 import BasicTable from "../Table/table";
 
 class HomePage extends Component {

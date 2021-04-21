@@ -2,8 +2,10 @@ import React from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
 import './App.css';
-import Dashboard from '../Dashboard/Dashboard';
-import Preferences from '../Preferences/Preferences';
+
+import HomePage from '../Home/home'
+import LoginPage from '../Login/loginPage'
+import RegisterPage from '../Login/registerPage'
 import Login from '../Login/Login';
 import useToken from './useToken'
 
@@ -19,12 +21,14 @@ function App() {
             <h1>Application</h1>
             <BrowserRouter>
                 <Switch>
-                    <Route path="/dashboard">
-                        <Dashboard />
-                    </Route>
+                    <Route exact path="/" component= { HomePage } />
                     
-                    <Route path="/preferences">
-                        <Preferences />
+                    <Route path="/loginPage">
+                        <LoginPage />
+                    </Route>
+
+                    <Route path="/registerPage">
+                        <RegisterPage />
                     </Route>
                 </Switch>
             </BrowserRouter>
