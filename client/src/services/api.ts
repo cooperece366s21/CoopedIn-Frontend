@@ -4,8 +4,8 @@ function getCurrentUserId(): string {
     return localStorage.getItem("authtoken") || "";
 }
 
-function setCurrentUser(token: string): void {
-    localStorage.setItem("authtoken", token);
+function setCurrentUser(user: User): void {
+    localStorage.setItem("authtoken", user.id);
 }
 export type User = {
     id: string;
