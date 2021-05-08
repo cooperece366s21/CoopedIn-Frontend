@@ -1,5 +1,21 @@
 export const BACKEND_URL = "http://localhost:4567";
 
+export async function getDatabase(){
+    const response = await fetch('${BACKEND_URL}/job/Internship/feed',{
+        method:"GET",
+        mode:"cors",
+        headers:{
+
+        }
+    }
+    const response = await fetch('${BACKEND_URL}/job/FullTime/feed',{
+        method:"GET",
+        mode:"cors",
+        headers:{
+
+        }
+    }
+)}
 function getCurrentUserId(): string {
     return localStorage.getItem("authtoken") || "";
 }
@@ -34,3 +50,17 @@ export async function login(
         return { error: response.status.toString(), status: "failure" };
     }
 }
+export type Feed = {
+    shelves: Shelf[];
+};
+
+export type Shelf = {
+    title: String;
+    shelfItems: Content[];
+};
+
+export type Content = {
+    id: string;
+    title: string;
+
+};
