@@ -1,5 +1,5 @@
 import React from "react";
-import "./Register.scss";
+import "./Register.css";
 import {withRouter} from "react-router-dom";
 export class Register extends React.Component{
     constructor(props) {
