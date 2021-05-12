@@ -6,11 +6,9 @@ import HomePage from "./component/home";
 import UserPage from "./component/userPage"
 //import {connect} from "react-redux";
 //import activePage from "store";
-import {BrowserRouter as Router, Switch, Route, BrowserRouter} from "react-router-dom";
+import {BrowserRouter, Route, Switch} from "react-router-dom";
+
 //import changePage from "./redux/actions/actions";
-import {connect, useDispatch} from "react-redux";
-import useToken from './component/useToken'
-import Login from "./component/Login/Login";
 
 function App(){
 

@@ -11,9 +11,9 @@ export const Timer = () => {
         }
     });
     return(
-        <div1>
+        <div>
             Time: {date.toLocaleTimeString()}
-        </div1>
+        </div>
     )
 }
 // cleanup used to reset process, avoid leak

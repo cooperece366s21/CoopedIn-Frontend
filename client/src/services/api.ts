@@ -13,8 +13,8 @@ export type Job = {
     available: boolean;
     location: string;
 };
-export function getTable(): Promise<Jobs>{
-    return  fetch('${BACKEND_URL}/job/Internship/feed',{
+export function getTable(): Promise<any>{
+    return  fetch(`${BACKEND_URL}/job/Internship/feed`,{
         method:"GET",
         mode:"cors",
         headers:{

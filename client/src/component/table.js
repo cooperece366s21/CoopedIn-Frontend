@@ -28,9 +28,7 @@ class BasicTable extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            jobs: [
-                {id: null, company: null, jobTitle: null, available:null, location:null}
-            ]
+            jobs: null
         };
     }
     async componentDidMount(){
@@ -39,32 +37,34 @@ class BasicTable extends React.Component {
     }
 
     render() {
-        const {job_data} = this.state;
-        return (
-            <TableContainer component={Paper}>
-                <Table className={useStyles.table} aria-label="simple table">
-                    <thead>
-                    <tr>{header.map((h, i)=> <th key={i}>{h}</th>)}</tr>
-                    </thead>
-                    <tbody>
-                    {Object.keys(job_data.data.available).map((k, i) => {
-                    let data = job_data.data.available[k];
-                    return(
-                        <tr key={i}>
-                            <td>{k}</td>
-                            <td>{data.id}</td>
-                            <td>{data.company}</td>
-                            <td>{data.jobTitle}</td>
-                            <td>{data.available}</td>
-                            <td>{data.location}</td>
-                        </tr>
-                    );
-                    })}
-                    </tbody>
-                </Table>
-            </TableContainer>
+        const {jobs} = this.state;
+        if (jobs) {
+            return (
+                <TableContainer component={Paper}>
+                    <Table className={useStyles.table} aria-label="simple table">
+                        <thead>
+                        <tr>{header.map((h, i) => <th key={i}>{h}</th>)}</tr>
+                        </thead>
+                        <tbody>
+                        {jobs.jobPostings.map((data, i) => {
+                            return (
+                                <tr key={i}>
+                                    <td>{data.id}</td>
+                                    <td>{data.company}</td>
+                                    <td>{data.jobTitle}</td>
+                                    <td>{data.available}</td>
+                                    <td>{data.location}</td>
+                                </tr>
+                            );
+                        })}
+                        </tbody>
+                    </Table>
+                </TableContainer>
 
-        );
+            );
+        } else {
+            return <div></div>;
+        }
     }
 }
 export default BasicTable;
