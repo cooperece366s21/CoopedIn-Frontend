@@ -1,13 +1,27 @@
 export const BACKEND_URL = "http://localhost:4567";
-export async function getTable(){
-    const res = await fetch('${BACKEND_URL}/job/Internship/feed',{
+export type Jobs = {
+    shelves: Shelf[];
+};
+export type Shelf = {
+    title: String;
+    shelfItems: Job[];
+};
+export type Job = {
+    id: string;
+    company: string;
+    jobTitle: string;
+    available: boolean;
+    location: string;
+};
+export function getTable(): Promise<Jobs>{
+    return  fetch('${BACKEND_URL}/job/Internship/feed',{
         method:"GET",
         mode:"cors",
         headers:{
             "Content-Type": "application/json",
         }
     })
-        .then(function(response){
+        .then(response => {
             return response.json();
         })
 }
@@ -45,18 +59,5 @@ export async function login(
         return { error: response.status.toString(), status: "failure" };
     }
 }
-export type Feed = {
-    shelves: Shelf[];
-};
 
-export type Shelf = {
-    title: String;
-    shelfItems: Content[];
-};
-
-export type Content = {
-    id: string;
-    title: string;
-
-};
 //export default exports

@@ -1,9 +1,9 @@
 import React, {Component} from 'react';
 import '../loginButton.css';
 import ReactDOM from "react-dom";
-import mapStateToProps from "react-redux/lib/connect/mapStateToProps";
-import {connect} from "react-redux";
-import { useDispatch } from "react-redux";
+//import mapStateToProps from "react-redux/lib/connect/mapStateToProps";
+//import {connect} from "react-redux";
+//import { useDispatch } from "react-redux";
 //import { changePage } from "../redux/actions/actions";
 import { Route , withRouter} from 'react-router-dom';
 //import changePage from "../redux/reducer/index";

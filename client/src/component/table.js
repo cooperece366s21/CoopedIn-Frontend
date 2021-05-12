@@ -7,56 +7,60 @@ import TableContainer from '@material-ui/core/TableContainer';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
-import api, {getTable} from '../services/api';
-//api.getTable(){};
+import * as api from '../services/api';
+
 const useStyles = makeStyles({
     table: {
         minWidth: 650,
     },
 });
-function createData(name, company, location, id, job_title) {
-    return { name, company, location, id, job_title };
-}
 
-const rows = [
-    createData('Solar panel person', "NYC Dept", "NY", 24, 4.0),
-    createData('Frontend Dev', "Uhhhh Spotify", "Remote", 37, 4.3),
-    createData('Electrician', "Cooper Union", "East Village", 24, 6.0),
-    createData('Robot Controller', "Microsoft", "CA", 67, 4.3),
-    createData('Architect', "Bloomberg", "NJ", 49, 3.9),
-];
 
+//const rows = [
+//    createData('Solar panel person', "NYC Dept", "NY", 24, 4.0),
+//    createData('Frontend Dev', "Uhhhh Spotify", "Remote", 37, 4.3),
+//    createData('Electrician', "Cooper Union", "East Village", 24, 6.0),
+//    createData('Robot Controller', "Microsoft", "CA", 67, 4.3),
+//    createData('Architect', "Bloomberg", "NJ", 49, 3.9),
+//];
+const header = ["id", "company", "jobTitle", "availablity", "location"];
 class BasicTable extends React.Component {
     constructor(props) {
         super(props);
+        this.state = {
+            jobs: [
+                {id: null, company: null, jobTitle: null, available:null, location:null}
+            ]
+        };
+    }
+    async componentDidMount(){
+        const job_data = await api.getTable();
+        this.setState({jobs: job_data})
     }
 
     render() {
+        const {job_data} = this.state;
         return (
             <TableContainer component={Paper}>
                 <Table className={useStyles.table} aria-label="simple table">
-                    <TableHead>
-                        <TableRow>
-                            <TableCell>Job Title </TableCell>
-                            <TableCell align="right">Company</TableCell>
-                            <TableCell align="right">Location</TableCell>
-                            <TableCell align="right">id</TableCell>
-                            <TableCell align="right">Job Type</TableCell>
-                        </TableRow>
-                    </TableHead>
-                    <TableBody>
-                        {rows.map((row) => (
-                            <TableRow key={row.name}>
-                                <TableCell component="th" scope="row">
-                                    {row.name}
-                                </TableCell>
-                                <TableCell align="right">{row.company}</TableCell>
-                                <TableCell align="right">{row.location}</TableCell>
-                                <TableCell align="right">{row.id}</TableCell>
-                                <TableCell align="right">{row.job_title}</TableCell>
-                            </TableRow>
-                        ))}
-                    </TableBody>
+                    <thead>
+                    <tr>{header.map((h, i)=> <th key={i}>{h}</th>)}</tr>
+                    </thead>
+                    <tbody>
+                    {Object.keys(job_data.data.available).map((k, i) => {
+                    let data = job_data.data.available[k];
+                    return(
+                        <tr key={i}>
+                            <td>{k}</td>
+                            <td>{data.id}</td>
+                            <td>{data.company}</td>
+                            <td>{data.jobTitle}</td>
+                            <td>{data.available}</td>
+                            <td>{data.location}</td>
+                        </tr>
+                    );
+                    })}
+                    </tbody>
                 </Table>
             </TableContainer>
 

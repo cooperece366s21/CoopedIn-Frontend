@@ -5,23 +5,23 @@ import LoginPage from "./component/Login/loginPage";
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import Timer from "./component/Timer";
-import connect from "react-redux/lib/connect/connect";
-import {push} from "connected-react-router";
+//import connect from "react-redux/lib/connect/connect";
+//import {push} from "connected-react-router";
 import { BrowserRouter as Router, BrowserRouter, Switch, Route, Link } from 'react-router-dom';
 import loginButton from "./component/loginButton"
-import {changeLogin, changePage, changeUsername} from "./redux/actions/actions";
-import {createStore, combineReducers} from 'redux';
-import allReducers from "./redux/reducer"
+//import {changeLogin, changePage, changeUsername} from "./redux/actions/actions";
+//import {createStore, combineReducers} from 'redux';
+//import allReducers from "./redux/reducer"
 //import LoginPage from "./loginPage";
-import {Provider} from "react-redux";
+//import {Provider} from "react-redux";
 
-const store = createStore(
-    allReducers,
-    window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
-);
+//const store = createStore(
+   // allReducers,
+  //  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+//);
 
 ReactDOM.render(
-    <Provider store = {store}>
+    //<Provider store = {store}>
         <React.StrictMode>
             <BrowserRouter>
                  <Route exact path="/" component = {HomePage}>
@@ -30,8 +30,8 @@ ReactDOM.render(
              </BrowserRouter>
          <App />
 
-  </React.StrictMode>
-    </Provider>,
+  </React.StrictMode>,
+   // </Provider>,
   document.getElementById('root')
 );
 
