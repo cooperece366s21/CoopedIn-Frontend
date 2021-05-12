@@ -13,6 +13,40 @@ export type Job = {
     available: boolean;
     location: string;
 };
+export type Result<T> =
+    | {
+    value: T;
+    status: "success";
+}
+    | {
+    error: string;
+    status: "failure";
+};
+
+export async function addJob(
+    id: string,
+    company: string,
+    jobTitle: string,
+    location: string,
+    jobType: string
+): Promise<Result<Job>> {
+    const response = await fetch(`${BACKEND_URL}/newJob`, {
+        method: "POST",
+        mode: "cors",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({ id, company, jobTitle, location, jobType })
+    });
+
+    if (response.ok) {
+        let job: Job = await response.json();
+        return { value: job, status: "success" };
+    } else {
+        return { error: response.status.toString(), status: "failure" };
+    }
+}
+
 export function getTable_Internship(): Promise<any>{
     return  fetch(`${BACKEND_URL}/job/Internship/feed`,{
         method:"GET",

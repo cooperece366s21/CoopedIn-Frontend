@@ -11,13 +11,13 @@ export class Login extends React.Component{
         loginResponse: null,
 
     };
-    async onSubmit(){
-        const { username, password } = this.state;
-        const result = await api.login(username, password);
-        if (result.status ===! "success") {
-            this.setState({loginResponse: result.error});
-        }
-    }
+    // async onSubmit(){
+    //     const { username, password } = this.state;
+    //     const result = await api.login(username, password);
+    //     if (result.status ===! "success") {
+    //         this.setState({loginResponse: result.error});
+    //     }
+    // }
     constructor(props) {
         super(props);
         this.handleClick = this.handleClick.bind(this);
@@ -47,7 +47,7 @@ export class Login extends React.Component{
                     </form>
                 </div>
                 <div className = "footer">
-                    <button type ="button" onClick={() => this.onSubmit()} className ="btn">
+                    <button type ="button" onClick={() => this.handleClick()} className ="btn">
                         Login
                     </button>
                 </div>
