@@ -1,11 +1,7 @@
 import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
+import {makeStyles} from '@material-ui/core/styles';
 import Table from '@material-ui/core/Table';
-import TableBody from '@material-ui/core/TableBody';
-import TableCell from '@material-ui/core/TableCell';
 import TableContainer from '@material-ui/core/TableContainer';
-import TableHead from '@material-ui/core/TableHead';
-import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
 import * as api from '../services/api';
 
@@ -24,6 +20,7 @@ const useStyles = makeStyles({
 //    createData('Architect', "Bloomberg", "NJ", 49, 3.9),
 //];
 const header = ["id", "company", "jobTitle", "availablity", "location"];
+
 class BasicTable extends React.Component {
     constructor(props) {
         super(props);
@@ -31,7 +28,8 @@ class BasicTable extends React.Component {
             jobs: null
         };
     }
-    async componentDidMount(){
+
+    async componentDidMount() {
         const job_data = await api.getTable();
         this.setState({jobs: job_data})
     }
@@ -46,16 +44,19 @@ class BasicTable extends React.Component {
                         <tr>{header.map((h, i) => <th key={i}>{h}</th>)}</tr>
                         </thead>
                         <tbody>
-                        {jobs.jobPostings.map((data, i) => {
-                            return (
-                                <tr key={i}>
-                                    <td>{data.id}</td>
-                                    <td>{data.company}</td>
-                                    <td>{data.jobTitle}</td>
-                                    <td>{data.available}</td>
-                                    <td>{data.location}</td>
-                                </tr>
-                            );
+                        {jobs.jobPostings.map((postings, i) => {
+                            return postings.jobPostItems.map((data, j) => {
+                                console.log(data);
+                                return (
+                                    <tr key={`row-${j}`}>
+                                        <td>{data.id}</td>
+                                        <td>{data.company}</td>
+                                        <td>{data.jobTitle}</td>
+                                        <td>{data.available}</td>
+                                        <td>{data.location}</td>
+                                    </tr>
+                                );
+                            });
                         })}
                         </tbody>
                     </Table>
@@ -67,4 +68,5 @@ class BasicTable extends React.Component {
         }
     }
 }
+
 export default BasicTable;

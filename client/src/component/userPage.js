@@ -26,11 +26,9 @@ class HomePage extends Component {
                 <header>
                     <LoginButtonThing />User Page<Timer></Timer>
                 </header>
-                <body>
                 <div>
                     <BasicTable />
                 </div>
-                </body>
             </BrowserRouter>
 
         );

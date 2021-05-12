@@ -28,11 +28,9 @@ class HomePage extends Component {
             <header>
                 <LoginButtonThing />Job Board<Timer></Timer>
             </header>
-                <body>
                     <div>
                         <BasicTable />
                     </div>
-                </body>
             </BrowserRouter>
 
         );

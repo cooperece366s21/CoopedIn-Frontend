@@ -31,10 +31,8 @@ class LoginPage extends React.Component {
             <header>
                 <h1>Login Page</h1>
             </header>
-            <body>
                 <Login/>
                 <RegisterButtonThing />
-            </body>
 
                 </div>
         );

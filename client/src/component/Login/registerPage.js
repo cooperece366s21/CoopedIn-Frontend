@@ -31,10 +31,8 @@ class RegisterPage extends React.Component {
                 <header>
                     <h1>Account Registration Page</h1>
                 </header>
-                <body>
                 <Register/>
 
-                </body>
             </div>
         );
     }
