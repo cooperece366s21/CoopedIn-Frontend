@@ -13,8 +13,44 @@ export type Job = {
     available: boolean;
     location: string;
 };
-export function getTable(): Promise<any>{
+export function getTable_Internship(): Promise<any>{
     return  fetch(`${BACKEND_URL}/job/Internship/feed`,{
+        method:"GET",
+        mode:"cors",
+        headers:{
+            "Content-Type": "application/json",
+        }
+    })
+        .then(response => {
+            return response.json();
+        })
+}
+export function getTable_FullTime(): Promise<any>{
+    return  fetch(`${BACKEND_URL}/job/FullTime/feed`,{
+        method:"GET",
+        mode:"cors",
+        headers:{
+            "Content-Type": "application/json",
+        }
+    })
+        .then(response => {
+            return response.json();
+        })
+}
+export function getTable_PartTime(): Promise<any>{
+    return  fetch(`${BACKEND_URL}/job/PartTime/feed`,{
+        method:"GET",
+        mode:"cors",
+        headers:{
+            "Content-Type": "application/json",
+        }
+    })
+        .then(response => {
+            return response.json();
+        })
+}
+export function getTable_Coop(): Promise<any>{
+    return  fetch(`${BACKEND_URL}/job/Coop/feed`,{
         method:"GET",
         mode:"cors",
         headers:{
