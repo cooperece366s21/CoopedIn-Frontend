@@ -19,7 +19,7 @@ const useStyles = makeStyles({
 //    createData('Robot Controller', "Microsoft", "CA", 67, 4.3),
 //    createData('Architect', "Bloomberg", "NJ", 49, 3.9),
 //];
-const header = ["id", "company", "jobTitle", "availability", "location"];
+const header = ["id", "company", "jobTitle", "availablity", "location"];
 
 class BasicTable extends React.Component {
     constructor(props) {
@@ -28,24 +28,28 @@ class BasicTable extends React.Component {
             jobs_PartTime: null,
             jobs_FullTime: null,
             jobs_Internship: null,
-            jobs_Coop: null,
+            jobs_Coop: null
         };
     }
 
     async componentDidMount() {
         const job_data_PartTime = await api.getTable_PartTime();
-        this.setState({jobs_PartTime: job_data_PartTime})
         const job_data_FullTime = await api.getTable_FullTime();
-        this.setState({jobs_FullTime: job_data_FullTime})
         const job_data_Internship = await api.getTable_Internship();
-        this.setState({jobs_Internship: job_data_Internship})
         const job_data_Coop = await api.getTable_Coop();
-        this.setState({jobs_Coop: job_data_Coop})
+        this.setState({jobs_PartTime: job_data_PartTime,
+            jobs_FullTime: job_data_FullTime,
+            jobs_Internship: job_data_Internship,
+            jobs_Coop: job_data_Coop})
+        // this.setState({jobs_FullTime: job_data_FullTime})
+        // this.setState({jobs_Internship: job_data_Internship})
+        // this.setState({jobs_Coop: job_data_Coop})
     }
 
     render() {
         const {jobs_PartTime} = this.state;
         const {jobs_FullTime} = this.state;
+        //console.log(this.state);
         const {jobs_Internship} = this.state;
         const {jobs_Coop} = this.state;
         if (jobs_PartTime) {
